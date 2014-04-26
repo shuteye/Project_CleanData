@@ -1,4 +1,4 @@
-#### README - JH Data Cleaning Project ####
+# README - JH Data Cleaning Project #
 
 
 ## File 1 : run-analysis.R ##
@@ -7,7 +7,7 @@
 
 A set of libraries are preloaded. Some libraries may not be used in final code
 
-# Notes on Data #
+### Notes on Data ##
 -----------------
 
 The data presented in this project is derived from an investigation by Davide Anguita, Alessandro Ghio, Luca Oneto, Xavier Parra and Jorge L. Reyes-Ortiz.
@@ -15,7 +15,7 @@ It is experimental data taking measurements from cellular phone based accelerome
 assigned activities. Signals from the sensors are divided into body acceleration and gravity measures.
 
 
-# Notes on Extraction #
+## Notes on Extraction ##
 -----------------------
 
 This file contains the complete set of scripts used to download, extract, manipulate and analyze data.
@@ -31,20 +31,20 @@ reduced file with mean and std.dev information afterward.
 The script writes to the working directory 3 times. Once as a check for training and test data, once for a check on 
 the amalgamated master file, and once as an output of the tidy data file at the end (in both .txt & .csv formats).
 
-# Notes on Variables #
+## Notes on Variables ##
 ----------------------
 
 Indicator variables from the master data are: Subject, Activity_code, Activity . The subject and activity codes
 follow the raw data. Activity is a descriptive term applied to each activity code. They describe the action
 taken by experiment participants: 
 ```{r}
-Activity_code  	Description		Activity
-1			Walk			WALK
-2			Walk upstairs		WALK_UP
-3			Walk downstairs		WALK_DOWN
-4			Sit			SIT
-5			Stand			STAND
-6			Lay down		LAY
+Activity_code  	Description		    Activity
+1			          Walk			        WALK
+2			          Walk upstairs		  WALK_UP
+3			          Walk downstairs		WALK_DOWN
+4			          Sit			          SIT
+5			          Stand			        STAND
+6			          Lay down		      LAY
 ```
 Extracted variables from the master data include the 1st two indicator variables and the mean and std.dev variables for 
 each corresponding sub measurement after filtering from the original signal has been applied. 
@@ -56,30 +56,31 @@ six relevant activities. So the result for tBodyAcc-mean()-X for student 1 with 
 the mean all observation means of a timed body acceleration measure along the X axis when student #1 is laying down.
 
 The list of variables with RAW & descriptive names follows:
-```{r}
-Variable  		       Description
+```{r set-options}
+    options(width=25)
+Variable  		        Description
 
-Subject				      Subject
-Activity_code		    [Not Included]
-Activity			      Activity
+Subject				        Subject
+Activity_code		      [Not Included]
+Activity			        Activity
 
-tBodyAcc-XYZ		  	time measures of Body Acceleration 
-tGravityAcc-XYZ			time measures of Gravity Acceleration
-tBodyAccJerk-XYZ		time measures of Body Jerk
-tBodyGyro-XYZ			  time measures of Gyrometer
-tBodyGyroJerk-XYZ		time measures of Gyrometer Jerk
-tBodyAccMag			    time measures of Body Accelartion magnitude
-tGravityAccMag			time measures of Gravity Acceleration magnitude
-tBodyAccJerkMag			time measures of Body Jerk magnitude
-tBodyGyroMag	  		time measures of Gyrometer magnitude
-tBodyGyroJerkMag		time measures of Gyrometer Jerk magnitude
-fBodyAcc-XYZ		  	frequency measures of Body Acceleration 
-fBodyAccJerk-XYZ		frequency measures of Body Jerk
-fBodyGyro-XYZ			  frequency measures of Gyrometer
-fBodyAccMag			    frequency measures of Body Acceleration magnitude
-fBodyAccJerkMag			frequency measures of Body Jerk magnitude
-fBodyGyroMag			  frequency measures of Gyrometer magnitude
-fBodyGyroJerkMag		frequency measures of Gyrometer Jerk magnitude
+tBodyAcc-XYZ		  	  time measures of Body Acceleration 
+tGravityAcc-XYZ			  time measures of Gravity Acceleration
+tBodyAccJerk-XYZ		  time measures of Body Jerk
+tBodyGyro-XYZ			    time measures of Gyrometer
+tBodyGyroJerk-XYZ		  time measures of Gyrometer Jerk
+tBodyAccMag			      time measures of Body Accelartion magnitude
+tGravityAccMag			  time measures of Gravity Acceleration magnitude
+tBodyAccJerkMag			  time measures of Body Jerk magnitude
+tBodyGyroMag	  		  time measures of Gyrometer magnitude
+tBodyGyroJerkMag		  time measures of Gyrometer Jerk magnitude
+fBodyAcc-XYZ		  	  frequency measures of Body Acceleration 
+fBodyAccJerk-XYZ		  frequency measures of Body Jerk
+fBodyGyro-XYZ			    frequency measures of Gyrometer
+fBodyAccMag			      frequency measures of Body Acceleration magnitude
+fBodyAccJerkMag			  frequency measures of Body Jerk magnitude
+fBodyGyroMag			    frequency measures of Gyrometer magnitude
+fBodyGyroJerkMag		  frequency measures of Gyrometer Jerk magnitude
 
 ```
 
@@ -88,11 +89,11 @@ There are 66 Extracted variables and 2 indicator variables in the tidy data set.
 Data are arranged as follows:
 
 ```{r}
-Subject	Activity	Var1	Var2 ...
-1	LAY		0.1234	0.1234	...
+Subject	Activity	Var1	  Var2    ...
+1	      LAY	    	0.1234	0.1234	...
 ```
 
-# Notes on Script procedure #
+## Notes on Script procedure ##
 -----------------------------
 
 The script run_analysis.R is available on https://github.com/shuteye/
@@ -116,8 +117,8 @@ Please note the .R script is heavily annotated for specific reference to command
 code specific queries
 
 
-License:
-========
+## License: ##
+==============
 Acknowledgement of use of original dataset [1] 
 
 [1] Davide Anguita, Alessandro Ghio, Luca Oneto, Xavier Parra and Jorge L. Reyes-Ortiz. Human Activity Recognition on Smartphones using a Multiclass Hardware-Friendly Support Vector Machine. International Workshop of Ambient Assisted Living (IWAAL 2012). Vitoria-Gasteiz, Spain. Dec 2012
